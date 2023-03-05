@@ -2,7 +2,7 @@
 :root {
   --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --msger-bg: #fff;
-  --left-msg-bg: linear-gradient(to right, #f895b9, #f44183);
+  --left-msg-bg: linear-gradient(to right, #f895b9, #6223f9);
   --right-msg-bg: #ececec;
 }
 html {
@@ -28,10 +28,10 @@ body {
   flex-flow: column wrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 386px;
+  max-width: 500px;
   margin: 25px 10px;
   border-radius: 10px;
-  height: calc(100% - 100px);
+  height: calc(100% - 600px);
   background: var(--msger-bg);
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 }
