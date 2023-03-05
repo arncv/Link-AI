@@ -3,11 +3,13 @@ const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const app = express();
-const sdk = require('api')('@writesonic/v2.2#4rsw33hlcbxl549');
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-sdk.auth(process.env.WRITESONIC_KEY);
+const cors = require('cors');
+app.use(cors());
+app.use(express.json());
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_KEY,
 });
@@ -41,6 +43,8 @@ async function handleUserMessage(message) {
   return reply;
 }
 
+
+
 // Define a route to handle incoming chat messages
 app.post("/chat", async (req, res) => {
   const message = req.body.message;
@@ -55,6 +59,26 @@ app.post("/chat", async (req, res) => {
 app.get("/chat", (req, res) => {
     res.json({ conversationLog });
 });
+
+app.post('/api/generate', async(req, res) => {
+  try {
+    const description = req.body.description;
+
+    const response = await openai.createImage({
+      prompt: description,
+      n: 1,
+      size: '512x512'
+    })
+
+    const { data } = response.data;
+    const { url: imageUrl } = data[0];
+
+    return res.send(`<a href="${imageUrl}" target="_blank"><img src="${imageUrl}"></a>`);
+  } catch(error) {
+    return res.status(500).json({ message: 'Error generating image' });
+  }
+});
+
 
 
 // Start the server

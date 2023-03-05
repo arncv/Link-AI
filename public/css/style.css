@@ -553,17 +553,17 @@ button {
 
 /** We Do section **/
 
-.we_do {
+.features {
      background-color: #fff;
      padding-top: 90px;
 }
 
-.we_do .titlepage {
+.features .titlepage {
      text-align: center;
      padding-bottom: 60px;
 }
 
-.we_do .titlepage p {
+.features .titlepage p {
      font-size: 17px;
      line-height: 30px;
      font-weight: 400;
@@ -571,7 +571,7 @@ button {
      color: #070101;
 }
 
-.we_do .we_box {
+.features .we_box {
      padding: 30px 30px 60px 30px;
      text-align: center;
      border: #37139a solid 1px;
@@ -581,7 +581,7 @@ button {
      height: 490px;
 }
 
-.we_do .we_box span {
+.features .we_box span {
      font-weight: bold;
      font-size: 30px;
      color: #000000;
@@ -596,7 +596,7 @@ button {
      transition: ease-in all 0.5s;
 }
 
-.we_do .we_box h3 {
+.features .we_box h3 {
      padding: 30px 0px 20px 0px;
      color: #070101;
      font-size: 25px;
@@ -605,7 +605,7 @@ button {
      transition: ease-in all 0.5s;
 }
 
-.we_do .we_box p {
+.features .we_box p {
      font-size: 17px;
      color: #010103;
      line-height: 32px;
@@ -632,7 +632,7 @@ button {
      transition: ease-in all 0.5s;
 }
 
-.we_do .read_more {
+.features .read_more {
      margin-top: 40px !important;
      margin: 0 auto;
      display: block;
@@ -640,7 +640,7 @@ button {
      color: #fff;
 }
 
-.we_do .read_more:hover {
+.features .read_more:hover {
      background-color: #fcc10e;
 }
 
