@@ -311,8 +311,7 @@ button {
 .logo {
      text-align: center;
      margin-top: -33px !important;
-     border: #fff solid 2px;
-     max-width: 200px;
+     max-width: 250px;
      padding: 15px 0 28px 0;
      margin: 0 auto;
 }
@@ -578,7 +577,7 @@ button {
      border-radius: 10px;
      transition: ease-in all 0.5s;
      margin-bottom: 30px;
-     height: 490px;
+     height: 850px;
 }
 
 .features .we_box span {
