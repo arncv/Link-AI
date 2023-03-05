@@ -27,3 +27,27 @@ During the development of Link AI, we learned the importance of designing for th
 # What's next for Link AI
 
 Our next steps are to continue improving the platform and integrating with more AI tools to provide even more functionality for content creators. We also plan to expand our user base and make Link AI the go-to platform for anyone looking to create high-quality content quickly and efficiently.
+
+# HOW TO RUN 
+
+``` bash
+git clone https://github.com/arncv/Link-AI 
+```
+```bash
+npm install
+```
+create a new file .env and add following Variables
+```bash
+OPENAI_KEY=''
+WRITESONIC_KEY=''
+TWILIO_ACCOUNT_SID=''
+TWILIO_AUTH_TOKEN=''
+TWILIO_PHONE=''
+MY_PHONE=''
+```
+
+now run 
+
+```bash
+node server.js
+```
