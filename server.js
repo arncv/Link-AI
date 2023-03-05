@@ -10,6 +10,10 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_KEY,
 });
@@ -43,8 +47,6 @@ async function handleUserMessage(message) {
   return reply;
 }
 
-
-
 // Define a route to handle incoming chat messages
 app.post("/chat", async (req, res) => {
   const message = req.body.message;
@@ -72,6 +74,12 @@ app.post('/api/generate', async(req, res) => {
 
     const { data } = response.data;
     const { url: imageUrl } = data[0];
+
+    const message = await client.messages.create({
+      body: `Image generated: ${imageUrl}`,
+      from: process.env.TWILIO_PHONE,
+      to: process.env.MY_PHONE
+    });
 
     return res.send(`<a href="${imageUrl}" target="_blank"><img src="${imageUrl}"></a>`);
   } catch(error) {
