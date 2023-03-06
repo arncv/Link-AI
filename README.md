@@ -1,6 +1,8 @@
 # Link-AI
 The one-stop-shop for all your AI needs!
 
+[![Youtube Demo Link](https://img.youtube.com/vi/fHtVa8yDtbY/0.jpg)](https://www.youtube.com/watch?v=fHtVa8yDtbY)
+
 [Youtube Demo Link](https://www.youtube.com/watch?v=fHtVa8yDtbY)
 
 # Inspiration💡
